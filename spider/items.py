@@ -27,4 +27,6 @@ class ElemeSpiderItem(scrapy.Item):
     longitude = scrapy.Field()
     #物流费用
     expressFee = scrapy.Field()
+    #饿了么门店id
+    elemeShopId = scrapy.Field()
 

@@ -28,8 +28,7 @@ class elemeSpiders(scrapy.Spider):
         return [url + str(x * 30) for x in range(1, n)]
 
     def start_requests(self):
-        for url in self.get_urls(2):
-           print(url)
+        for url in self.get_urls(1000):
            yield scrapy.Request(url=url, callback=self.parse, cookies=self.cookie)
 
     def parse(self, response):

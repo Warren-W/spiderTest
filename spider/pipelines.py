@@ -14,9 +14,9 @@ class SpiderPipeline(object):
         self.cursor = self.connection.cursor()
 
     def process_item(self, item, spider):
-        insert_sql="insert into t_eleme_shop_info(f_name,f_address,f_latitude,f_longitude,f_phone,f_expressFee) VALUES (%s,%s,%s,%s,%s,%s)"
+        insert_sql="insert into t_eleme_shop_info(f_name,f_address,f_latitude,f_longitude,f_phone,f_expressFee,f_eleme_shop_id) VALUES (%s,%s,%s,%s,%s,%s,%s)"
         try:
-            self.cursor.execute(insert_sql, (item["name"], item["address"], item["latitude"], item["longitude"], item["phone"], item["expressFee"]))
+            self.cursor.execute(insert_sql, (item["name"], item["address"], item["latitude"], item["longitude"], item["phone"], item["expressFee"], item["elemeShopId"]))
             self.connection.commit()
             print("插入数据")
         except:
