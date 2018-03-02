@@ -110,3 +110,7 @@ ROBOTSTXT_OBEY = False
 
 # 允许429错误
 HTTPERROR_ALLOWED_CODES = [429]
+
+ITEM_PIPELINES = {
+   'spider.pipelines.SpiderPipeline': 300,
+}
